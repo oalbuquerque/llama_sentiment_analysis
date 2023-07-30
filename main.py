@@ -23,8 +23,8 @@ checkpoint = path + model_name
 --------------------------------------------------------------
 """
 
-tokenizer = LlamaTokenizer.from_pretrained("/home/gerontech/llama2/models/7B") # PATH_TO_CONVERTED_WEIGHTS
-model = LlamaForCausalLM.from_pretrained("/home/gerontech/llama2/models/tokenizer.model") # PATH_TO_CONVERTED_TOKENIZER
+tokenizer = LlamaTokenizer.from_pretrained("/home/gerontech/llama2/models/tokenizer.model") # PATH_TO_CONVERTED_WEIGHTS
+model = LlamaForCausalLM.from_pretrained("/home/gerontech/llama2/models/7B") # PATH_TO_CONVERTED_TOKENIZER
 
 
 #model = AutoModelForCausalLM.from_pretrained("/home/gerontech/llama2/models/7B", device_map="auto") # PATH_TO_CONVERTED_WEIGHTS
