@@ -26,8 +26,8 @@ checkpoint = path + model_name
 #tokenizer = LlamaTokenizer.from_pretrained("/output/path") # PATH_TO_CONVERTED_WEIGHTS
 #model = LlamaForCausalLM.from_pretrained("/output/path") # PATH_TO_CONVERTED_TOKENIZER
 
-tokenizer = AutoTokenizer.from_pretrained("/home/gerontech/llama2/models/tokenizer.model") # PATH_TO_CONVERTED_TOKENIZER
-model = AutoModelForCausalLM.from_pretrained("/home/gerontech/llama2/models/tokenizer.model", device_map="auto") # PATH_TO_CONVERTED_WEIGHTS
+tokenizer = AutoTokenizer.from_pretrained("/home/gerontech/llama2") # PATH_TO_CONVERTED_TOKENIZER
+model = AutoModelForCausalLM.from_pretrained("/home/gerontech/llama2", device_map="auto") # PATH_TO_CONVERTED_WEIGHTS
 
 
 prompt = """Dado um conjunto de tweets em português, preprocessados e limpos (sem menções, retweets, hashtags e pontuações), realize a análise do sentimento dos textos,
