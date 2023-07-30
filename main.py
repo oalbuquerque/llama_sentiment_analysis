@@ -1,6 +1,6 @@
 import torch
 
-#!pip install transformers
+!pip install transformers
 #from transformers import LlamaTokenizer, LlamaForCausalLM
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
