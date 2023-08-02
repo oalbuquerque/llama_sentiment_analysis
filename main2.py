@@ -77,31 +77,24 @@ def main(
     )
 
     prompts = [
-        # For these prompts, the expected answer is the natural continuation of the prompt
-        "I believe the meaning of life is",
-        "Simply put, the theory of relativity states that ",
-        "Building a website can be done in 10 simple steps:\n",
-        # Few shot prompts: https://huggingface.co/blog/few-shot-learning-gpt-neo-and-inference-api
-        """Tweet: "I hate it when my phone battery dies."
-Sentiment: Negative
-###
-Tweet: "My day has been 👍"
-Sentiment: Positive
-###
-Tweet: "This is the link to the article"
-Sentiment: Neutral
-###
-Tweet: "This new music video was incredibile"
-Sentiment:""",
-        """Translate English to French:
+        # sentiment polarity analysis
+        prompt = """Dado um conjunto de tweets em português, preprocessados e limpos (sem menções, retweets, hashtags e pontuações), realize a análise do sentimento dos textos,
+        classificando-os em positivo, negativo ou neutro. Forneça apenas o resultado do sentimento para cada tweet, sem menções ao comando dado ou explicações adicionais.
+        Os resultados devem ser entregues na mesma ordem das perguntas. O formato das respostas deve ser adequado para inclusão em um dataframe no Python:
 
-sea otter => loutre de mer
-
-peppermint => menthe poivrée
-
-plush girafe => girafe peluche
-
-cheese =>""",
+        o pesadelo da invasão de privacidade até onde vai a tecnologia do reconhecimento facial => negativo;
+        os vieses nos modelos de texto ai serão um grande problema por exemplo a ética embutida no chatgpt permite brincar com o comunismo ao mesmo tempo em que condena claramente o nazismo tão
+        desrespeitoso com as vítimas do terror vermelho e errado => negativo;
+        será que o chatgpt vai substituir o google => neutro;
+        deve haver um sistema avançado de monitorização por vídeo vigilância e reconhecimento facial => neutro;
+        o facebook vem aprimorando a sua tecnologia de reconhecimento facial possibilitando que deficientes visuais consigam ouvir uma descrição de quem está na foto mesmo que o amigo não esteja marcado
+        na publicação saiba mais => positivo;
+        nem só de reconhecimento de padrões vive as aplicações de ia automatização de serviços podem aperfeiçoar bastante os processos de uma organização reduzindo os custos e aumentando a satisfação do cliente => positivo;
+        mas será mesmo que preciso saber criar inteligência artificial para criar um chatbot => ;
+        google emite “sinal de alerta” após lançamento do chatgpt => ;
+        pra parecer história de filme você vai ter que procurar em todas as redes sociais e apps de reconhecimento facial => ;
+        os chatbots podem entregar a seu cliente exatamente o que ele quer apenas batendo um papo com ele acesse => ?;
+        """
     ]
     results = generator.generate(
         prompts, max_gen_len=256, temperature=temperature, top_p=top_p
