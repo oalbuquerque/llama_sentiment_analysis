@@ -9,7 +9,7 @@ checkpoint = path + model_name
 #tokenizer = LlamaTokenizer.from_pretrained("/home/gerontech/llama2/models/tokenizer.model") # PATH_TO_CONVERTED_WEIGHTS
 
 
-model = AutoModelForCausalLM.from_pretrained("/home/gerontech/llama2/models/7B", device_map="auto")
+model = AutoModelForCausalLM.from_pretrained("/home/gerontech/llama2/models/7B")
 tokenizer = AutoTokenizer.from_pretrained("/home/gerontech/llama2/models/tokenizer.model")
 
 prompt = "What Brazilian researchers won the Nobel Prize?"
