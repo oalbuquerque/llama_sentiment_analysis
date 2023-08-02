@@ -127,7 +127,7 @@ def main(
         Sentimento:positivo
         ###
         Tweets:"mas será mesmo que preciso saber criar inteligência artificial para criar um chatbot.";"google emite 'sinal de alerta' após lançamento do chatgpt.";"pra parecer história de filme você vai ter que procurar em todas as redes sociais e apps de reconhecimento facial.";"os chatbots podem entregar a seu cliente exatamente o que ele quer apenas batendo um papo com ele acesse."
-        Sentimentos:""",
+        Sentimentos dos tweets:""",
     ]
    
     results = generator.generate(
