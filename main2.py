@@ -129,7 +129,8 @@ def main(
         Tweet:"mas será mesmo que preciso saber criar inteligência artificial para criar um chatbot."
         Tweet:"google emite 'sinal de alerta' após lançamento do chatgpt."
         Tweet:"pra parecer história de filme você vai ter que procurar em todas as redes sociais e apps de reconhecimento facial."
-        Tweet:"os chatbots podem entregar a seu cliente exatamente o que ele quer apenas batendo um papo com ele acesse.""""
+        Tweet:"os chatbots podem entregar a seu cliente exatamente o que ele quer apenas batendo um papo com ele acesse."
+        """
     ]
     results = generator.generate(
         prompts, max_gen_len=256, temperature=temperature, top_p=top_p
