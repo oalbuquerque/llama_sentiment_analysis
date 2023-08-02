@@ -126,11 +126,16 @@ def main(
         Tweet:"nem só de reconhecimento de padrões vive as aplicações de ia automatização de serviços podem aperfeiçoar bastante os processos de uma organização reduzindo os custos e aumentando a satisfação do cliente."
         Sentimento:positivo
         ###
-        Tweet:"mas será mesmo que preciso saber criar inteligência artificial para criar um chatbot."
-        Tweet:"google emite 'sinal de alerta' após lançamento do chatgpt."
-        Tweet:"pra parecer história de filme você vai ter que procurar em todas as redes sociais e apps de reconhecimento facial."
-        Tweet:"os chatbots podem entregar a seu cliente exatamente o que ele quer apenas batendo um papo com ele acesse."
+        """,
         """
+        Tweet:"mas será mesmo que preciso saber criar inteligência artificial para criar um chatbot."
+        Sentiment:""",
+        """Tweet:"google emite 'sinal de alerta' após lançamento do chatgpt."
+        Sentiment:""",
+        """Tweet:"pra parecer história de filme você vai ter que procurar em todas as redes sociais e apps de reconhecimento facial."
+        Sentiment:""",
+        """Tweet:"os chatbots podem entregar a seu cliente exatamente o que ele quer apenas batendo um papo com ele acesse."
+        Sentiment:""",
     ]
     results = generator.generate(
         prompts, max_gen_len=256, temperature=temperature, top_p=top_p
