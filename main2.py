@@ -9,8 +9,8 @@ checkpoint = path + model_name
 #tokenizer = LlamaTokenizer.from_pretrained("/home/gerontech/llama2/models/tokenizer.model") # PATH_TO_CONVERTED_WEIGHTS
 
 
-model = AutoModelForCausalLM.from_pretrained(checkpoint, device_map="auto")
-tokenizer = AutoTokenizer.from_pretrained(checkpoint)
+model = AutoModelForCausalLM.from_pretrained("/home/gerontech/llama2/models/7B", device_map="auto")
+tokenizer = AutoTokenizer.from_pretrained("/home/gerontech/llama2/models/tokenizer.model")
 
 prompt = "What Brazilian researchers won the Nobel Prize?"
 inputs = tokenizer(prompt, return_tensors="pt").to('cuda')
