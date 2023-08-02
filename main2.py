@@ -93,11 +93,29 @@ def main(
 ):
     generator = load(ckpt_dir, tokenizer_path, max_seq_len, max_batch_size)
 
-    prompts = [
-        # "I believe the meaning of life is",
-        """Write the Python code with detailed comments to generate 256 random integers in the range from -128 to 512, inclusive.
-\\begin{code}\n""",
-    ]
+    prompts = """Dado um conjunto de tweets em português, preprocessados e limpos (sem menções, retweets, hashtags e pontuações), realize a análise do sentimento dos textos,
+        classificando-os em positivo, negativo ou neutro. Forneça apenas o resultado do sentimento para cada tweet, sem menções ao comando dado ou explicações adicionais.
+        Os resultados devem ser entregues na mesma ordem das perguntas. O formato das respostas deve ser adequado para inclusão em um dataframe no Python:
+
+        o pesadelo da invasão de privacidade até onde vai a tecnologia do reconhecimento facial => negativo;
+        os vieses nos modelos de texto ai serão um grande problema por exemplo a ética embutida no chatgpt permite brincar com o comunismo ao mesmo tempo em que condena claramente o nazismo tão
+        desrespeitoso com as vítimas do terror vermelho e errado => negativo;
+        será que o chatgpt vai substituir o google => neutro;
+        deve haver um sistema avançado de monitorização por vídeo vigilância e reconhecimento facial => neutro;
+        o facebook vem aprimorando a sua tecnologia de reconhecimento facial possibilitando que deficientes visuais consigam ouvir uma descrição de quem está na foto mesmo que o amigo não esteja marcado
+        na publicação saiba mais => positivo;
+        nem só de reconhecimento de padrões vive as aplicações de ia automatização de serviços podem aperfeiçoar bastante os processos de uma organização reduzindo os custos e aumentando a satisfação do cliente => positivo;
+        mas será mesmo que preciso saber criar inteligência artificial para criar um chatbot => ;
+        google emite “sinal de alerta” após lançamento do chatgpt => ;
+        pra parecer história de filme você vai ter que procurar em todas as redes sociais e apps de reconhecimento facial => ;
+        os chatbots podem entregar a seu cliente exatamente o que ele quer apenas batendo um papo com ele acesse => ?;
+        """
+
+#prompts = [
+# "I believe the meaning of life is",
+#"""Write the Python code with detailed comments to generate 256 random integers in the range from -128 to 512, inclusive.
+#\\begin{code}\n""",
+#]
     
     results = generator.generate(
         prompts, max_gen_len=max_seq_len, temperature=temperature, top_p=top_p, top_k=top_k, repetition_penalty=repetition_penalty, sampler=sampler
