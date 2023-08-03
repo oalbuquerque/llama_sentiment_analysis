@@ -59,11 +59,18 @@ def load(
     print(f"Loaded in {time.time() - start_time:.2f} seconds")
     return generator
 
-def tweets(text):
-    tweets_cleaned = "".join(f"'{index + 1}-{content};'" for index, content in enumerate(text.astype(str)))
-    tweets_sentiment = ['Tweet:'+tweets_cleaned+\n'Sentiment:']
-return tweets_cleaned
+import pandas as pd
+from google.colab import drive
+drive.mount('/content/drive')
 
+#df = pd.read_csv('/content/drive/MyDrive/Academics stuffs/C4AI/twitter_scrap/Twitter_Mined_Application_total.csv', sep=';')
+
+
+def tweets(text):
+    df = pd.read_csv('/content/drive/MyDrive/Academics stuffs/C4AI/GPT/sentiment_analysis.csv', sep=';')
+    tweets_cleaned = "".join(f"'{index + 1}-{content}';" for index, content in enumerate(text.astype(str)))
+    tweets_sentiment = 'Tweet:'+tweets_cleaned+'\nSentiment:'
+    return tweets_sentiment
 
 def main(
     ckpt_dir: str,
@@ -131,8 +138,7 @@ def main(
         Tweet:"nem só de reconhecimento de padrões vive as aplicações de ia automatização de serviços podem aperfeiçoar bastante os processos de uma organização reduzindo os custos e aumentando a satisfação do cliente."
         Sentimento:positivo
         ###
-        Tweets:1-"mas será mesmo que preciso saber criar inteligência artificial para criar um chatbot.";2-"google emite 'sinal de alerta' após lançamento do chatgpt.";3-"pra parecer história de filme você vai ter que procurar em todas as redes sociais e apps de reconhecimento facial.";4-"os chatbots podem entregar a seu cliente exatamente o que ele quer apenas batendo um papo com ele acesse."
-        Sentimentos:""",
+        tweets(df['clean_text'])""",
     ]
    
     results = generator.generate(
