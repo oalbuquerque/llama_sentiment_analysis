@@ -59,6 +59,11 @@ def load(
     print(f"Loaded in {time.time() - start_time:.2f} seconds")
     return generator
 
+def tweets(text):
+    tweets_cleaned = "".join(f"'{index + 1}-{content};'" for index, content in enumerate(text.astype(str)))
+    tweets_sentiment = ['Tweet:'+tweets_cleaned+\n'Sentiment:']
+return tweets_cleaned
+
 
 def main(
     ckpt_dir: str,
