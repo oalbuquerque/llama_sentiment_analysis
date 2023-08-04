@@ -72,7 +72,7 @@ def main(
     temperature: float = 0.7,
     top_p: float = 0.95,
     max_seq_len: int = 1512,
-    max_batch_size: int = 32,  #could cause torch.cuda.OutOfMemoryError: CUDA out of memory. if it too large
+    max_batch_size: int = 8,  #could cause torch.cuda.OutOfMemoryError: CUDA out of memory. if it too large
 ):
     local_rank, world_size = setup_model_parallel()
     if local_rank > 0:
