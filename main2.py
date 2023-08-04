@@ -71,7 +71,7 @@ def main(
     tokenizer_path: str,
     temperature: float = 0.7,
     top_p: float = 0.95,
-    max_seq_len: int = 2000,
+    max_seq_len: int = 1500,
     max_batch_size: int = 8,  #could cause torch.cuda.OutOfMemoryError: CUDA out of memory. if it too large
 ):
     local_rank, world_size = setup_model_parallel()
