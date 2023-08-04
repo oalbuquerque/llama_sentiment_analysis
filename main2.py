@@ -159,18 +159,18 @@ def main(
 
     prompts3 = [
         # sentiment polarity analysis
-        f"""Tweets: "reconhecimento facial é vida"; "essa é uma das iniciativas mais legais que vi nos últimos tempos experiência interativa com chatbot simula um futuro sem a amazônia e mobiliza jovens na atualidade";
-        "polícia militar está utilizando em fase de teste câmeras de videomonitoramento que com a base de dados do estado utiliza reconhecimento facial para cumprir mandados de prisões em aberto entre outras ocorrências polícia";
-        "pesquisadores usam visão computacional para reconstruir objetos"; "e na inglaterra falta educação e punição na era de inteligência artificial e reconhecimento facial o sujeito que briga consegue retornar para o estádio é incrível a falta de segurança e de organização";
-        "e mesmo assim o serviço que vocês entregam é um lixo entra ano sai ano e vocês não fazem nada para melhorar o chatbot de vocês é genérico e ineficiente o chat web a mesma coisa ligar é pedir pra passar nervoso na espera";
-        Sentiment: positivo;positivo;neutro;neutro;negativo;negativo
+        f"""Tweets: 1-"reconhecimento facial é vida"; 2-"essa é uma das iniciativas mais legais que vi nos últimos tempos experiência interativa com chatbot simula um futuro sem a amazônia e mobiliza jovens na atualidade";
+        3-"polícia militar está utilizando em fase de teste câmeras de videomonitoramento que com a base de dados do estado utiliza reconhecimento facial para cumprir mandados de prisões em aberto entre outras ocorrências polícia";
+        4-"pesquisadores usam visão computacional para reconstruir objetos"; 5-"e na inglaterra falta educação e punição na era de inteligência artificial e reconhecimento facial o sujeito que briga consegue retornar para o estádio é incrível a falta de segurança e de organização";
+        6-"e mesmo assim o serviço que vocês entregam é um lixo entra ano sai ano e vocês não fazem nada para melhorar o chatbot de vocês é genérico e ineficiente o chat web a mesma coisa ligar é pedir pra passar nervoso na espera";
+        Sentiment: 1-positivo;2-positivo;3-neutro;4-neutro;5-negativo;6-negativo
         ###
         {tweets()}
         Sentiments: """,
     ]
    
     results = generator.generate(
-        prompts3, max_gen_len=1200, temperature=temperature, top_p=top_p
+        prompts3, max_gen_len=200, temperature=temperature, top_p=top_p
     )
 
     for result in results:
