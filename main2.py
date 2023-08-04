@@ -62,7 +62,7 @@ def load(
 
 def tweets():
     df = pd.read_csv('sentiment_analysis.csv', sep=';')
-    tweets_cleaned = "".join(f"{index + 1}-'{content}';" for index, content in enumerate(df['clean_text'].astype(str)))
+    tweets_cleaned = "".join(f"{index + 1}-"{content}";" for index, content in enumerate(df['clean_text'].astype(str)))
     tweets_sentiment = 'Tweets:'+tweets_cleaned
     return tweets_sentiment
 
@@ -135,26 +135,26 @@ def main(
 
     prompts = [
         # sentiment polarity analysis
-        f"""Tweet:"reconhecimento facial é vida"
+        f"""Tweet: "reconhecimento facial é vida"
         Sentiment: positivo
         ###
-        Tweet:"essa é uma das iniciativas mais legais que vi nos últimos tempos experiência interativa com chatbot simula um futuro sem a amazônia e mobiliza jovens na atualidade"
+        Tweet: "essa é uma das iniciativas mais legais que vi nos últimos tempos experiência interativa com chatbot simula um futuro sem a amazônia e mobiliza jovens na atualidade"
         Sentiment: positivo
         ###
-        Tweet:"polícia militar está utilizando em fase de teste câmeras de videomonitoramento que com a base de dados do estado utiliza reconhecimento facial para cumprir mandados de prisões em aberto entre outras ocorrências polícia"
+        Tweet: "polícia militar está utilizando em fase de teste câmeras de videomonitoramento que com a base de dados do estado utiliza reconhecimento facial para cumprir mandados de prisões em aberto entre outras ocorrências polícia"
         Sentiment: neutro
         ###
-        Tweet:"pesquisadores usam visão computacional para reconstruir objetos"
+        Tweet: "pesquisadores usam visão computacional para reconstruir objetos"
         Sentiment: neutro
         ###
-        Tweet:"e na inglaterra falta educação e punição na era de inteligência artificial e reconhecimento facial o sujeito que briga consegue retornar para o estádio é incrível a falta de segurança e de organização"
+        Tweet: "e na inglaterra falta educação e punição na era de inteligência artificial e reconhecimento facial o sujeito que briga consegue retornar para o estádio é incrível a falta de segurança e de organização"
         Sentiment: negativo
         ###
-        Tweet:"e mesmo assim o serviço que vocês entregam é um lixo entra ano sai ano e vocês não fazem nada para melhorar o chatbot de vocês é genérico e ineficiente o chat web a mesma coisa ligar é pedir pra passar nervoso na espera"
+        Tweet: "e mesmo assim o serviço que vocês entregam é um lixo entra ano sai ano e vocês não fazem nada para melhorar o chatbot de vocês é genérico e ineficiente o chat web a mesma coisa ligar é pedir pra passar nervoso na espera"
         Sentiment: negativo
         ###
         {tweets()}
-        Sentiments:""",
+        Sentiments: """,
     ]
    
     results = generator.generate(
