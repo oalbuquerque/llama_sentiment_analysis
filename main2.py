@@ -63,7 +63,7 @@ def load(
 def tweets(text):
     df = pd.read_csv('sentiment_analysis.csv', sep=';')
     tweets_cleaned = "".join(f"'{index + 1}-{content}';" for index, content in enumerate(text.astype(str)))
-    tweets_sentiment = 'Tweet:'+tweets_cleaned+'\nSentiment:'
+    tweets_sentiment = 'Tweet:'+tweets_cleaned+''
     return tweets_sentiment
 
 def main(
@@ -153,9 +153,10 @@ def main(
         ###
         Tweet:"e mesmo assim o serviço que vocês entregam é um lixo entra ano sai ano e vocês não fazem nada para melhorar o chatbot de vocês é genérico e ineficiente o chat web a mesma coisa ligar é pedir pra passar nervoso na espera"
         Sentiment: negativo
-        ###
+        ###"""
+        tweets(df['clean_text'])
         """
-        tweets(df['clean_text']),
+        Sentiment:""",
     ]
    
     results = generator.generate(
