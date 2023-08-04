@@ -132,7 +132,7 @@ def main(
         tweets(df['clean_text'])""",
     ]
 
-df = pd.read_csv('sentiment_analysis.csv', sep=';')
+    df = pd.read_csv('sentiment_analysis.csv', sep=';')
     prompts = [
         # sentiment polarity analysis
         """Tweet:"reconhecimento facial é vida"
