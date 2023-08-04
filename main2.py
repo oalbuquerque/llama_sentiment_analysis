@@ -61,7 +61,6 @@ def load(
     return generator
 
 def tweets(text):
-    df = pd.read_csv('sentiment_analysis.csv', sep=';')
     tweets_cleaned = "".join(f"'{index + 1}-{content}';" for index, content in enumerate(text.astype(str)))
     tweets_sentiment = 'Tweet:'+tweets_cleaned+'\nSentiment:'
     return tweets_sentiment
@@ -133,7 +132,7 @@ def main(
         tweets(df['clean_text'])""",
     ]
 
-    
+df = pd.read_csv('sentiment_analysis.csv', sep=';')
     prompts = [
         # sentiment polarity analysis
         """Tweet:"reconhecimento facial é vida"
