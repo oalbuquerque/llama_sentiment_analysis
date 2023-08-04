@@ -5,6 +5,7 @@ import torch
 import fire
 import time
 import json
+import pandas as pd
 
 from pathlib import Path
 
@@ -59,15 +60,8 @@ def load(
     print(f"Loaded in {time.time() - start_time:.2f} seconds")
     return generator
 
-import pandas as pd
-from google.colab import drive
-drive.mount('/content/drive')
-
-#df = pd.read_csv('/content/drive/MyDrive/Academics stuffs/C4AI/twitter_scrap/Twitter_Mined_Application_total.csv', sep=';')
-
-
 def tweets(text):
-    df = pd.read_csv('/content/drive/MyDrive/Academics stuffs/C4AI/GPT/sentiment_analysis.csv', sep=';')
+    df = pd.read_csv('sentiment_analysis.csv', sep=';')
     tweets_cleaned = "".join(f"'{index + 1}-{content}';" for index, content in enumerate(text.astype(str)))
     tweets_sentiment = 'Tweet:'+tweets_cleaned+'\nSentiment:'
     return tweets_sentiment
