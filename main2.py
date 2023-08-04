@@ -82,7 +82,7 @@ def main(
         ckpt_dir, tokenizer_path, local_rank, world_size, max_seq_len, max_batch_size
     )
 
-    prompts = [
+    prompts2 = [
         # For these prompts, the expected answer is the natural continuation of the prompt
         "I believe the meaning of life is",
         "Simply put, the theory of relativity states that ",
@@ -134,7 +134,7 @@ def main(
     ]
 
     
-    prompts - [
+    prompts = [
         # sentiment polarity analysis
         """Tweet:"reconhecimento facial é vida"
         Sentiment: positivo
