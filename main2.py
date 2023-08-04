@@ -154,7 +154,8 @@ def main(
         Tweet:"e mesmo assim o serviço que vocês entregam é um lixo entra ano sai ano e vocês não fazem nada para melhorar o chatbot de vocês é genérico e ineficiente o chat web a mesma coisa ligar é pedir pra passar nervoso na espera"
         Sentiment: negativo
         ###
-        tweets(df['clean_text'])""",
+        """
+        tweets(df['clean_text']),
     ]
    
     results = generator.generate(
