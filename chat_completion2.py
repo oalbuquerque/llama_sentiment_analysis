@@ -62,17 +62,18 @@ These are just a few of the many attractions that Paris has to offer. With so mu
                 "content": "Always answer with emojis",
             },
             {"role": "user", "content": "How to go from Beijing to NY?"},
+             tweets(),
         ],
     ]
     
     results = generator.chat_completion(
-        dialogs2,  # type: ignore
+        dialogs,  # type: ignore
         max_gen_len=max_gen_len,
         temperature=temperature,
         top_p=top_p,
     )
 
-    for dialog, result in zip(dialogs2, results):
+    for dialog, result in zip(dialogs, results):
         for msg in dialog:
             print(f"{msg['role'].capitalize()}: {msg['content']}\n")
         print(
