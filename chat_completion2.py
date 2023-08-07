@@ -10,8 +10,9 @@ from generation import Llama
 
 def tweets():
     df = pd.read_csv('sentiment_analysis.csv', sep=';')
-    all_tweets_cleaned = "".join(f"{index + 1}-{content}" for index, content in enumerate(df["clean_text"].astype(str)))
-    return {"role": "user", "content": all_tweets_cleaned}
+    tweets_cleaned = "".join(f"{index + 1}-'{content}';" for index, content in enumerate(df['clean_text'].astype(str)))
+    tweets_sentiment = {"role": "user", "content": tweets_cleaned}
+    return tweets_sentiment
 
 def main(
     ckpt_dir: str,
@@ -31,7 +32,7 @@ def main(
 
     dialogs2 = [
     {"role": "system", "content": "Dada uma coleção de tweets em português previamente processados e limpos (excluindo menções, retweets, hashtags e pontuações), realize a análise de sentimento desses textos, classificando-os como positivo, negativo ou neutro. Entregue somente o resultado do sentimento para cada tweet, sem fazer menção ao comando dado ou incluir explicações adicionais. Os resultados devem ser fornecidos na mesma ordem dos tweets originais separados por ponto e vírgula ';'."},
-    tweets(),
+        tweets(),
     ]
     
     dialogs = [
