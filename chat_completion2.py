@@ -13,6 +13,8 @@ def tweets():
     tweets_cleaned = "".join(f"{index + 1}-'{content}';" for index, content in enumerate(df['clean_text'][:10].astype(str)))
     tweets_sentiment = {"role": "user", "content": tweets_cleaned}
     return tweets_sentiment
+    
+print(tweets())
 
 def main(
     ckpt_dir: str,
