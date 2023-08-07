@@ -23,6 +23,8 @@ def main(
         max_seq_len=max_seq_len,
         max_batch_size=max_batch_size,
     )
+
+
     
     dialogs = [
         [{"role": "user", "content": "what is the recipe of mayonnaise?"}],
@@ -51,9 +53,6 @@ These are just a few of the many attractions that Paris has to offer. With so mu
                 "content": "Always answer with emojis",
             },
             {"role": "user", "content": "How to go from Beijing to NY?"},
-        ],
-        [
-            tweets(),
         ],
     ]
     
