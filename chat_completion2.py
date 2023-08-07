@@ -63,6 +63,8 @@ These are just a few of the many attractions that Paris has to offer. With so mu
         {"role": "system", "content": "Dada uma coleção de tweets em português previamente processados e limpos (excluindo menções, retweets, hashtags e pontuações), realize a análise de sentimento desses textos, classificando-os como positivo, negativo ou neutro. Entregue somente o resultado do sentimento para cada tweet, sem fazer menção ao comando dado ou incluir explicações adicionais. Os resultados devem ser fornecidos na mesma ordem dos tweets originais separados por ponto e vírgula ';'."},
         dict_message,
     ]
+
+    print(dialogs)
     
     results = generator.chat_completion(
         dialogs,  # type: ignore
