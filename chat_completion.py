@@ -4,7 +4,7 @@
 from typing import Optional
 import torch
 import fire
-
+import time
 from llama import LLaMA
 
 def load(
