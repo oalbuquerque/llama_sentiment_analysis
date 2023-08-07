@@ -16,7 +16,7 @@ from llama import ModelArgs, Transformer, Tokenizer, LLaMA
 
 def tweets():
     df = pd.read_csv('sentiment_analysis.csv', sep=';')
-    tweets_cleaned = "".join(f"{index + 1}-'{content}';" for index, content in enumerate(df['clean_text'].astype(str)))
+    tweets_cleaned = "".join(f"{index + 1}-'{content}';" for index, content in enumerate(df['clean_text'][:5].astype(str)))
     tweets_sentiment = 'Tweets:'+tweets_cleaned
     return tweets_sentiment
 
@@ -27,7 +27,7 @@ def main(
     top_p: float = 0.9,
     max_seq_len: int = 1512,
     max_batch_size: int = 8,
-    max_gen_len: Optional[int] = None,
+    max_gen_len: Optional[int] = 512,
 ):
     generator = Llama.build(
         ckpt_dir=ckpt_dir,
@@ -121,7 +121,7 @@ def main(
     ]
    
     results = generator.generate(
-        prompts3, max_gen_len=5000, temperature=temperature, top_p=top_p
+        prompts3, max_gen_len=max_gen_len, temperature=temperature, top_p=top_p
     )
 
     for result in results:
