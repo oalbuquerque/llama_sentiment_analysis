@@ -73,6 +73,7 @@ These are just a few of the many attractions that Paris has to offer. With so mu
         top_p=top_p,
     )
 
+    print(results)
     for dialog, result in zip(dialogs, results):
         for msg in dialog:
             print(f"{msg['role'].capitalize()}: {msg['content']}\n")
