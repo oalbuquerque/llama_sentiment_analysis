@@ -19,10 +19,10 @@ print(tweets())
 def main(
     ckpt_dir: str,
     tokenizer_path: str,
-    temperature: float = 0.6,
+    temperature: float = 0,
     top_p: float = 0.9,
-    max_seq_len: int = 2512,
-    max_batch_size: int = 4,
+    max_seq_len: int = 1512,
+    max_batch_size: int = 8,
     max_gen_len: Optional[int] = None,
 ):
     generator = Llama.build(
