@@ -14,7 +14,6 @@ def tweets():
     tweets_sentiment = {"role": "user", "content": f"""{tweets_cleaned}"""}
     return tweets_sentiment
     
-print(tweets())
 
 def main(
     ckpt_dir: str,
@@ -35,7 +34,7 @@ def main(
     dialogs = [
         [
             {"role": "system", "content":"Dada uma coleção de tweets em português previamente processados e limpos (excluindo menções, retweets, hashtags e pontuações), realize a análise de sentimento desses textos, classificando-os como positivo, negativo ou neutro. Entregue somente o resultado do sentimento para cada tweet, sem fazer menção ao comando dado ou incluir explicações adicionais. Os resultados devem ser fornecidos na mesma ordem dos tweets originais separados por ponto e vírgula ';'."},
-            {'role': 'user', 'content': "1-'acho muito bacana o whatsapp só permitir leitura de qrcode pro whatsapp web depois de fazer reconhecimento facial';2-'o facebook vem aprimorando a sua tecnologia de reconhecimento facial possibilitando que deficientes visuais consigam ouvir uma descrição de quem está na foto mesmo que o amigo não esteja marcado na publicação saiba mais';3-'órgãos de proteção de dados da europa querem banir reconhecimento facial';4-'o conselho europeu para a proteção de dados e a autoridade europeia para a proteção de dados defendem que a proibição do uso de sistemas de reconhecimento facial em espaços públicos é fundamental para preservar os direitos e liberdades dos cidadãos da ue';5-'univeidade usa reconhecimento facial para controlar frequência dos alunos';6-'usei o chat gpt e estou com medo da capacidade desse monstro';7-'google emite “sinal de alerta” após lançamento do chatgpt';8-'primeiro que plugar um chatbot ganha';9-'como desenvolver um chatbot aprenda sobre essa tecnologia na maratona bots que começa no dia de janeiro conheça';10-'google e intel lançam kit de inteligência artificial para reconhecimento de objetos';"},
+            tweets(),
         ],
     ]
     
