@@ -72,6 +72,10 @@ def main(
     max_batch_size: int = 4,
     max_gen_len: int = None,
 ):
+    local_rank, world_size = setup_model_parallel()
+    if local_rank > 0:
+        sys.stdout = open(os.devnull, "w")
+    
     generator = load(
         ckpt_dir, tokenizer_path, local_rank, world_size, max_seq_len, max_batch_size
     )
