@@ -76,7 +76,7 @@ def main(
     if local_rank > 0:
         sys.stdout = open(os.devnull, "w")
     
-    generator = load(
+    generator = load.generate.chat_completion(
         ckpt_dir, tokenizer_path, local_rank, world_size, max_seq_len, max_batch_size
     )
 
