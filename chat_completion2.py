@@ -5,7 +5,7 @@ from typing import Optional
 
 import fire
 
-from llama import LLaMa
+from llama import LLaMA
 
 
 def main(
