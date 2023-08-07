@@ -73,7 +73,7 @@ def main(
     max_gen_len: int = None,
 ):
     generator = load(
-        ckpt_dir, tokenizer_path, max_seq_len, max_batch_size
+        cckpt_dir, tokenizer_path, local_rank, world_size, max_seq_len, max_batch_size
     )
 
     dialogs = [
