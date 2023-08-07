@@ -8,7 +8,7 @@ import json
 import pandas as pd
 
 from pathlib import Path
-
+from generation import Llama
 from fairscale.nn.model_parallel.initialize import initialize_model_parallel
 
 from llama import ModelArgs, Transformer, Tokenizer, LLaMA
@@ -78,8 +78,17 @@ def main(
     if local_rank > 0:
         sys.stdout = open(os.devnull, "w")
 
-    generator = load(
-        ckpt_dir, tokenizer_path, local_rank, world_size, max_seq_len, max_batch_size
+    #generator = load(
+    #    ckpt_dir, tokenizer_path, local_rank, world_size, max_seq_len, max_batch_size
+    #)
+
+    generator = Llama.build(
+        ckpt_dir=ckpt_dir,
+        tokenizer_path=tokenizer_path,
+        local_rank,
+        world_size,
+        max_seq_len=max_seq_len,
+        max_batch_size=max_batch_size,
     )
 
     prompts2 = [
