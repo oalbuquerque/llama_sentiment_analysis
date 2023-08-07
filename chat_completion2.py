@@ -5,7 +5,8 @@ from typing import Optional
 
 import fire
 
-from llama_sentiment_analysis import Llama
+
+import Llama
 
 
 def main(
