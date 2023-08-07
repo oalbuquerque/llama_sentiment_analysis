@@ -9,7 +9,7 @@ import pandas as pd
 from generation import Llama
 
 def tweets():
-    df = pd.read_csv('/content/drive/MyDrive/Academics stuffs/C4AI/GPT/sentiment_analysis.csv', sep=';')
+    df = pd.read_csv('sentiment_analysis.csv', sep=';')
     tweets_cleaned = "".join(f"{index + 1}-{content};" for index, content in enumerate(df['clean_text'][:1].astype(str)))
     tweets_sentiment = {"role": "user", "content": f"""{tweets_cleaned}"""}
     return tweets_sentiment
