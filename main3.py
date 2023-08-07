@@ -121,7 +121,7 @@ def main(
     ]
    
     results = generator.generate(
-        prompts3, temperature=temperature, top_p=top_p
+        prompts3, max_gen_len=max_gen_len, temperature=temperature, top_p=top_p
     )
 
     for result in results:
