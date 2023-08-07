@@ -52,8 +52,7 @@ def main(
         temperature=temperature,
         top_p=top_p,
     )
-
-    print(results)
+    
     for dialog, result in zip(dialogs2, results):
         for msg in dialog:
             print(f"{msg['role'].capitalize()}: {msg['content']}\n")
