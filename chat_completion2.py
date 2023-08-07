@@ -24,7 +24,12 @@ def main(
         max_batch_size=max_batch_size,
     )
 
-    dialogs = [
+def tweets():
+    df = pd.read_csv('sentiment_analysis.csv', sep=';')
+    tweets_cleaned = "".join(f"{index + 1}-'{content}';" for index, content in enumerate(df['clean_text'].astype(str)))
+    return {"role": "user", "content": tweets_cleaned}
+
+    dialogs2 = [
         [{"role": "user", "content": "what is the recipe of mayonnaise?"}],
         [
             {"role": "user", "content": "I am going to Paris, what should I see?"},
@@ -53,6 +58,12 @@ These are just a few of the many attractions that Paris has to offer. With so mu
             {"role": "user", "content": "How to go from Beijing to NY?"},
         ],
     ]
+
+    dialogs = [
+        {"role": "system", "content": "Dada uma coleção de tweets em português previamente processados e limpos (excluindo menções, retweets, hashtags e pontuações), realize a análise de sentimento desses textos, classificando-os como positivo, negativo ou neutro. Entregue somente o resultado do sentimento para cada tweet, sem fazer menção ao comando dado ou incluir explicações adicionais. Os resultados devem ser fornecidos na mesma ordem dos tweets originais separados por ponto e vírgula ';'."},
+        dict_message,
+    ]
+    
     results = generator.chat_completion(
         dialogs,  # type: ignore
         max_gen_len=max_gen_len,
