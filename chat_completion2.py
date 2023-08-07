@@ -6,8 +6,7 @@ from typing import Optional
 import fire
 
 
-import Llama
-
+from main import Llama
 
 def main(
     ckpt_dir: str,
