@@ -70,7 +70,7 @@ def main(
     top_p: float = 0.9,
     max_seq_len: int = 512,
     max_batch_size: int = 4,
-    max_gen_len: Optional[int] = None,
+    max_gen_len: int = None,
 ):
     generator = load(
         ckpt_dir, tokenizer_path, max_seq_len, max_batch_size
