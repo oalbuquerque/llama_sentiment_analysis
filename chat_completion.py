@@ -5,7 +5,7 @@ from typing import Optional
 import torch
 import fire
 
-from llama import ModelArgs, Transformer, Tokenizer, LLaMA
+from llama import LLaMA
 
 
 def main(
