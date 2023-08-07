@@ -85,8 +85,6 @@ def main(
     generator = Llama.build(
         ckpt_dir=ckpt_dir,
         tokenizer_path=tokenizer_path,
-        local_rank,
-        world_size,
         max_seq_len=max_seq_len,
         max_batch_size=max_batch_size,
     )
