@@ -4,7 +4,7 @@
 from typing import Optional
 
 import fire
-
+import pandas as pd
 
 from generation import Llama
 
