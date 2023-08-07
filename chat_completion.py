@@ -5,7 +5,7 @@ from typing import Optional
 import torch
 import fire
 
-from llama import ModelArgs, Transformer, Tokenizer, Llama
+from llama import ModelArgs, Transformer, Tokenizer, LLaMA
 
 def load(
     ckpt_dir: str,
