@@ -10,7 +10,6 @@ from llama import LLaMA
 def load(
     ckpt_dir: str,
     tokenizer_path: str,
-    world_size: int,
     max_seq_len: int,
     max_batch_size: int,
 ) -> LLaMA:
@@ -49,7 +48,7 @@ def main(
     max_gen_len: Optional[int] = None,
 ):
     generator = load(
-        ckpt_dir, tokenizer_path, world_size, max_seq_len, max_batch_size
+        ckpt_dir, tokenizer_path, max_seq_len, max_batch_size
     )
 
     dialogs = [
