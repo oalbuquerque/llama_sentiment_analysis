@@ -22,7 +22,7 @@ def main(
     top_p: float = 0.9,
     max_seq_len: int = 1512,
     max_batch_size: int = 8,
-    max_gen_len: Optional[int] = 32,
+    max_gen_len: Optional[int] = None,
 ):
     generator = Llama.build(
         ckpt_dir=ckpt_dir,
@@ -47,7 +47,7 @@ def main(
     
     results = generator.chat_completion(
         dialogs2,  # type: ignore
-        max_gen_len=max_gen_len,
+        max_gen_len=32,
         temperature=temperature,
         top_p=top_p,
     )
