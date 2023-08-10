@@ -18,7 +18,7 @@ def tweets():
 def main(
     ckpt_dir: str,
     tokenizer_path: str,
-    temperature: float = 0,
+    temperature: float = 0.8,
     top_p: float = 0.9,
     max_seq_len: int = 1512,
     max_batch_size: int = 8,
