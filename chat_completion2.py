@@ -60,6 +60,7 @@ def main(
         )
         print("\n==================================\n")
 
+print(results)
 
 if __name__ == "__main__":
     fire.Fire(main)
